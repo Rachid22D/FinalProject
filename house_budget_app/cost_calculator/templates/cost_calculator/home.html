@@ -1,0 +1,30 @@
+{% extends 'cost_calculator/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+    <!-- Hero Section -->
+    <div class="text-center">
+        <img src="{% static 'cost_calculator/images/house.jpg' %}" alt="Welcome Image" class="hero-image img-fluid rounded">
+        <div class="welcome mt-4">
+            <h1 class="display-4">Welcome to HouseBudget</h1>
+            <p class="lead">Your go-to solution for calculating house building and renovation costs.</p>
+        </div>
+    </div>
+
+    <!-- About Us Section -->
+    <div class="about-us mt-5">
+        <h2>About Us</h2>
+        <p>
+            HouseBudget is a platform designed to help homeowners and professionals estimate the cost of building or renovating houses. 
+            From labor costs to material prices, we provide everything you need to plan your project efficiently.
+        </p>
+    </div>
+
+    <!-- Call to Action Section -->
+    <div class="text-center my-5">
+        <a href="{% url 'login' %}" class="btn btn-primary btn-lg me-3">Login</a>
+        <a href="{% url 'register' %}" class="btn btn-secondary btn-lg">Register</a>
+    </div>
+</div>
+{% endblock %}

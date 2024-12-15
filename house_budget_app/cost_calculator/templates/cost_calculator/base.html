@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HouseBudget</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <!-- Custom CSS for the page -->
+    <link rel="stylesheet" href="{% static 'cost_calculator/css/home.css' %}">
+</head>
+<body>
+    <!-- Header Section with Bootstrap Navbar -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+            <div class="container">
+                <!-- Logo -->
+                <a class="navbar-brand text-white" href="#">HouseBudget</a>
+                <!-- Navbar Toggle Button for mobile view -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- Navbar Links -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{% url 'login' %}">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{% url 'register' %}">Register</a>
+                        </li>
+                        <li class="nav-item">
+                            <form action="#" method="GET" class="d-flex">
+                                <input type="text" name="search" class="form-control me-2" placeholder="Search">
+                                <button type="submit" class="btn btn-light">Search</button>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Main content area -->
+    <main class="container mt-4">
+        {% block content %}
+        {% endblock %}
+    </main>
+    {% if messages %}
+        <div class="container mt-3">
+            {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}" role="alert">
+                {{ message }}
+            </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li class="{{ message.tags }}">{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+
+    <!-- Footer Section -->
+    <footer class="bg-dark text-white py-3 mt-5">
+        <div class="container d-flex justify-content-between align-items-center flex-column flex-sm-row">
+            <p class="mb-0 text-center text-sm-start">© 2024 HouseBudget - All Rights Reserved</p>
+        </div>
+    </footer>
+    
+    <!-- Scroll to Top Button -->
+    <div id="scroll-to-top" class="scroll-to-top">
+        ↑
+    </div>
+    
+    <!-- Link to the external JavaScript file -->
+    <script src="{% static 'cost_calculator/js/script.js' %}"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
