@@ -16,7 +16,7 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-primary">
             <div class="container">
                 <!-- Logo -->
-                <a class="navbar-brand text-white" href="#">HouseBudget</a>
+                <a class="navbar-brand text-white" href="{% url 'cost_calculator:home' %}">HouseBudget</a>
                 <!-- Navbar Toggle Button for mobile view -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -24,18 +24,26 @@
                 <!-- Navbar Links -->
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
+                        {% if user.is_authenticated %}
+                        <!-- Links for authenticated users -->
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="{% url 'login' %}">Login</a>
+                            <a class="nav-link text-white" href="{% url 'cost_calculator:new_project' %}">New Project</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="{% url 'register' %}">Register</a>
+                            <a class="nav-link text-white" href="{% url 'cost_calculator:all_projects' %}">All Projects</a>
                         </li>
                         <li class="nav-item">
-                            <form action="#" method="GET" class="d-flex">
-                                <input type="text" name="search" class="form-control me-2" placeholder="Search">
-                                <button type="submit" class="btn btn-light">Search</button>
-                            </form>
+                            <a class="nav-link text-white" href="{% url 'cost_calculator:logout' %}">Logout</a>
                         </li>
+                        {% else %}
+                        <!-- Links for unauthenticated users -->
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{% url 'cost_calculator:login' %}">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{% url 'cost_calculator:register' %}">Register</a>
+                        </li>
+                        {% endif %}
                     </ul>
                 </div>
             </div>
@@ -47,8 +55,10 @@
         {% block content %}
         {% endblock %}
     </main>
+
     {% if messages %}
         <div class="container mt-3">
+            <!-- Alert messages -->
             {% for message in messages %}
             <div class="alert alert-{{ message.tags }}" role="alert">
                 {{ message }}
@@ -59,11 +69,11 @@
     {% if messages %}
         <ul class="messages">
             {% for message in messages %}
+            <!-- Messages with tags -->
                 <li class="{{ message.tags }}">{{ message }}</li>
             {% endfor %}
         </ul>
     {% endif %}
-
 
     <!-- Footer Section -->
     <footer class="bg-dark text-white py-3 mt-5">

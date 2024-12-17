@@ -1,0 +1,64 @@
+{% extends 'cost_calculator/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Create New Project</h2>
+    <form method="POST" id="projectForm">
+        {% csrf_token %}
+
+        <!-- Project Name -->
+        <div class="form-group mb-3">
+            <label for="project_name">Project Name:</label>
+            <input type="text" id="project_name" name="name" class="form-control" placeholder="Enter project name" required>
+        </div>
+
+        <!-- Project Type -->
+        <div class="form-group mb-3">
+            <label for="project_type">Project Type:</label>
+            <select id="project_type" name="project_type" class="form-control" onchange="toggleProjectDetails()" required>
+                <option value="" disabled selected>Select project type</option>
+                <option value="complete">Complete House</option>
+                <option value="partial">Part of the House</option>
+            </select>
+        </div>
+
+        <!-- Partial Section -->
+        <div id="partial_section" class="form-group mb-3" style="display: none;">
+            <label for="house_part">Select Part of the House:</label>
+            <select id="house_part" name="partial_area" class="form-control" onchange="showWorks()" required>
+                <option value="" disabled selected>Select a part</option>
+                {% for part in house_parts %}
+                <option value="{{ part.id }}">{{ part.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <!-- Available Works -->
+        <div id="works_section" class="form-group mb-3" style="display: none;">
+            <label for="works">Select Works:</label>
+            <div id="works_list" class="border p-3"></div>
+        </div>
+
+        <!-- Budget Category -->
+        <div class="form-group mb-3">
+            <label for="budget_category">Budget Category:</label>
+            <select id="budget_category" name="budget_category" class="form-control" required>
+                <option value="" disabled selected>Select budget category</option>
+                <option value="high">High</option>
+                <option value="medium">Medium</option>
+                <option value="low">Low</option>
+            </select>
+        </div>
+
+        <!-- Total Cost -->
+        <div class="form-group mb-3">
+            <h5 id="total_cost" class="text-success">Total Cost: $0.00</h5>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Create Project</button>
+    </form>
+</div>
+
+<script src="{% static 'cost_calculator/js/new_project.js' %}"></script>
+{% endblock %}

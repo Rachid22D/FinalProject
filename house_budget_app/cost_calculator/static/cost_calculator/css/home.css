@@ -3,7 +3,6 @@ a {
     text-decoration: none;
 }
 
-
 /* Adjusting the Navbar Brand for smaller screens */
 .navbar-brand {
     font-size: 1.5rem;
@@ -42,6 +41,42 @@ header {
     background-color: #fff;
     border-radius: 5px;
     padding: 10px;
+}
+
+/* Dashboard Section */
+.dashboard {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard h2 {
+    color: #0d6efd;
+    font-size: 2rem;
+}
+
+.recent-projects h3, .statistics h3 {
+    font-size: 1.5rem;
+    color: #0dcaf0;
+}
+
+.recent-projects ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.recent-projects li {
+    background-color: #e9ecef;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+.statistics p {
+    background-color: #e9ecef;
+    padding: 10px;
+    border-radius: 5px;
 }
 
 /* About Section */
@@ -97,10 +132,10 @@ footer p {
         margin-top: 10px;
     }
 
-    /* Make the logo smaller on smaller screens */
     .navbar-brand {
         font-size: 1.2rem;
     }
+
     .hero-image {
         width: 100%;
         height: auto;
@@ -125,5 +160,14 @@ footer p {
 
     .about-us p {
         font-size: 1rem;
+    }
+
+    /* Dashboard Section */
+    .dashboard h2 {
+        font-size: 1.5rem;
+    }
+
+    .recent-projects h3, .statistics h3 {
+        font-size: 1.2rem;
     }
 }

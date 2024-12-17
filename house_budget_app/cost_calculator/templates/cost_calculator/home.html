@@ -3,8 +3,33 @@
 
 {% block content %}
 <div class="container mt-5">
-    <!-- Hero Section -->
+    {% if user.is_authenticated %}
+    <div class="dashboard">
+        <!-- Welcome message for authenticated users -->
+        <h2>Welcome back, {{ user.username }}!</h2>
+        <p>Your personal dashboard overview:</p>
+        
+        <div class="recent-projects">
+            <h3>Recent Projects</h3>
+            <!-- List of recent projects with estimated budget -->
+            <ul>
+                <li>Project 1: Estimated Budget - $10,000</li>
+                <li>Project 2: Estimated Budget - $15,000</li>
+                <li>Project 3: Estimated Budget - $7,000</li>
+            </ul>
+        </div>
+
+        <div class="statistics mt-4">
+            <h3>Statistics</h3>
+            <!-- Displaying user statistics -->
+            <p><strong>Total Projects:</strong> 5</p>
+            <p><strong>Total Estimated Budget:</strong> $50,000</p>
+            <p><strong>Pending Tasks:</strong> 2</p>
+        </div>
+    </div>
+    {% else %}
     <div class="text-center">
+        <!-- Image and welcome message for unauthenticated users -->
         <img src="{% static 'cost_calculator/images/house.jpg' %}" alt="Welcome Image" class="hero-image img-fluid rounded">
         <div class="welcome mt-4">
             <h1 class="display-4">Welcome to HouseBudget</h1>
@@ -12,7 +37,6 @@
         </div>
     </div>
 
-    <!-- About Us Section -->
     <div class="about-us mt-5">
         <h2>About Us</h2>
         <p>
@@ -21,10 +45,11 @@
         </p>
     </div>
 
-    <!-- Call to Action Section -->
+    <!-- Buttons for login and register -->
     <div class="text-center my-5">
-        <a href="{% url 'login' %}" class="btn btn-primary btn-lg me-3">Login</a>
-        <a href="{% url 'register' %}" class="btn btn-secondary btn-lg">Register</a>
+        <a href="{% url 'cost_calculator:login' %}" class="btn btn-primary btn-lg me-3">Login</a>
+        <a href="{% url 'cost_calculator:register' %}" class="btn btn-secondary btn-lg">Register</a>
     </div>
+    {% endif %}
 </div>
 {% endblock %}
