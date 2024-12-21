@@ -1,0 +1,26 @@
+{
+  "houseParts": [
+      { "id": 1, "name": "Kitchen" },
+      { "id": 2, "name": "Bathroom" },
+      { "id": 3, "name": "Living Room" },
+      { "id": 4, "name": "Bedroom" },
+      { "id": 5, "name": "Garden" },
+      { "id": 6, "name": "Roof" },
+      { "id": 7, "name": "Exterior Walls" },
+      { "id": 8, "name": "Flooring" },
+      { "id": 9, "name": "Electrical Systems" },
+      { "id": 10, "name": "Plumbing" }
+  ],
+  "worksForParts": {
+      "1": ["Plumber", "Electrician", "Cabinet Maker"],
+      "2": ["Plumber", "Electrician", "Tile Installer"],
+      "3": ["Painter", "Carpenter"],
+      "4": ["Carpenter", "Painter"],
+      "5": ["Gardener", "Landscaper"],
+      "6": ["Roofer", "Insulation Specialist"],
+      "7": ["Mason", "Painter"],
+      "8": ["Floor Installer", "Carpenter"],
+      "9": ["Electrician"],
+      "10": ["Plumber"]
+  }
+}

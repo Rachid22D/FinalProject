@@ -2,9 +2,10 @@
 {% load static %}
 
 {% block content %}
+
 <div class="container mt-5">
     <h2>Create New Project</h2>
-    <form method="POST" id="projectForm">
+    <form method="POST" action="{% url 'cost_calculator:create_project' %}" id="projectForm">
         {% csrf_token %}
 
         <!-- Project Name -->
@@ -23,21 +24,24 @@
             </select>
         </div>
 
-        <!-- Partial Section -->
+        <!-- Partial Section (Hidden by default) -->
         <div id="partial_section" class="form-group mb-3" style="display: none;">
             <label for="house_part">Select Part of the House:</label>
-            <select id="house_part" name="partial_area" class="form-control" onchange="showWorks()" required>
+            <select id="house_part" name="partial_area" class="form-control" required>
                 <option value="" disabled selected>Select a part</option>
-                {% for part in house_parts %}
-                <option value="{{ part.id }}">{{ part.name }}</option>
-                {% endfor %}
             </select>
         </div>
 
-        <!-- Available Works -->
+        <!-- Available Works (Hidden by default) -->
         <div id="works_section" class="form-group mb-3" style="display: none;">
             <label for="works">Select Works:</label>
             <div id="works_list" class="border p-3"></div>
+        </div>
+
+        <!-- Work Area -->
+        <div class="form-group mb-3">
+            <label for="work_area">Work Area (in square meters):</label>
+            <input type="number" id="work_area" name="work_area" class="form-control" placeholder="Enter the area in square meters" required>
         </div>
 
         <!-- Budget Category -->
@@ -51,14 +55,12 @@
             </select>
         </div>
 
-        <!-- Total Cost -->
-        <div class="form-group mb-3">
-            <h5 id="total_cost" class="text-success">Total Cost: $0.00</h5>
-        </div>
-
+        <!-- Submit Button -->
         <button type="submit" class="btn btn-primary">Create Project</button>
     </form>
 </div>
 
 <script src="{% static 'cost_calculator/js/new_project.js' %}"></script>
+
+
 {% endblock %}

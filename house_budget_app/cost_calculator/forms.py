@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from .models import Project
+from .models import Project, HousePart
 
 class CustomUserCreationForm(UserCreationForm):
     email = forms.EmailField(required=True, widget=forms.EmailInput(attrs={'class': 'form-control'}))
@@ -19,8 +19,4 @@ class CustomUserCreationForm(UserCreationForm):
 class ProjectForm(forms.ModelForm):
     class Meta:
         model = Project
-        fields = ['name', 'project_type', 'partial_area', 'area', 'budget_category']
-        widgets = {
-            'area': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Enter area in square meters'}),
-            'start_date': forms.DateTimeInput(attrs={'type': 'datetime-local', 'class': 'form-control'}),
-        }
+        fields = ['name', 'project_type', 'area', 'partial_area', 'budget_category']

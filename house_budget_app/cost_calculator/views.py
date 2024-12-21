@@ -1,9 +1,14 @@
+import os
+import json
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 from .forms import CustomUserCreationForm, ProjectForm
-import json
 from django.http import JsonResponse
+from django.shortcuts import render, get_object_or_404, redirect
+from .models import Project, HousePart, Material, Work
+
 
 def home(request):
     return render(request, 'cost_calculator/home.html')
@@ -36,66 +41,19 @@ def new_project(request):
     return render(request, 'cost_calculator/new_project.html')
 
 
+
+def create_project(request):
+    pass
+    
+    
+@login_required
 def all_projects(request):
+   
+    # تمرير المشاريع إلى القالب
     return render(request, 'cost_calculator/all_projects.html')
 
 
-def create_project(request):
-    if request.method == 'POST':
-        form = ProjectForm(request.POST)
-        if form.is_valid():
-            project = form.save()
-            selected_works = request.POST.getlist('works')
-            budget_category = form.cleaned_data['budget_category']
-            
-            with open('path/to/construction_data.json') as f:
-                data = json.load(f)
-            
-            total_cost = 0
-            for work in selected_works:
-                for material in data['materials']:
-                    total_cost += material['average_price']
-            
-            labor_multiplier = 1.0
-            if budget_category == 'high':
-                labor_multiplier = 1.5
-            elif budget_category == 'medium':
-                labor_multiplier = 1.0
-            else:
-                labor_multiplier = 0.8
-            
-            total_cost *= labor_multiplier
-            project.total_cost = total_cost
-            project.save()
 
-            return JsonResponse({'status': 'success', 'total_cost': total_cost})
-    else:
-        form = ProjectForm()
-    return render(request, 'cost_calculator/new_project.html', {'form': form})
-
-def calculate_cost(request):
-    if request.method == 'POST':
-        selected_works = request.POST.getlist('works')
-        budget_category = request.POST.get('budget_category')
-        
-        with open('path/to/construction_data.json') as f:
-            data = json.load(f)
-
-        total_cost = 0
-        for work in selected_works:
-            for material in data['materials']:
-                total_cost += material['average_price']
-
-        labor_multiplier = 1.0
-        if budget_category == 'high':
-            labor_multiplier = 1.5
-        elif budget_category == 'medium':
-            labor_multiplier = 1.0
-        else:
-            labor_multiplier = 0.8
-        
-        total_cost *= labor_multiplier
-        return JsonResponse({'status': 'success', 'total_cost': total_cost})
 
 def user_logout(request):
     logout(request)
