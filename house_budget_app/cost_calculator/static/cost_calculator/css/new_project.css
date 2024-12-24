@@ -1,0 +1,126 @@
+body {
+    background-color: #f8f9fa;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+h2 {
+    font-weight: bold;
+}
+
+#project-form {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+label {
+    font-weight: 600;
+    color: #555;
+}
+
+input, select {
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 14px;
+    width: 100%;
+    margin-top: 5px;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #80bdff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.save-btn {
+    font-weight: bold;
+    position: absolute;
+    background-color: #007bff;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    top: 0;
+    right: 10%;
+    width: 20% !important;
+}
+.save-btn:hover {
+    background-color: #0056b3;
+}
+
+#data-display {
+    background-color: #f8f9fa; /* خلفية فاتحة */
+    padding: 20px;
+    border-radius: 10px; /* حواف دائرية */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* ظل خفيف */
+    margin-top: 30px;
+    display: none; /* مخفي مبدئيًا */
+    transition: opacity 0.5s ease-in-out;
+}
+
+#data-display h3 {
+    font-size: 1.8rem;
+    color: #495057; /* لون رمادي دافئ */
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+#display-content {
+    background-color: #ffffff; /* خلفية بيضاء */
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* ظل خفيف */
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+
+#display-content h4 {
+    color: #007bff; /* أزرق فاتح */
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+    font-weight: bold;
+}
+
+#display-content p {
+    color: #333333; /* لون نص داكن */
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+#display-content p strong {
+    color: #ff5722; /* لون برتقالي جميل */
+    font-weight: bold;
+}
+
+#display-content hr {
+    border: 0;
+    border-top: 2px solid #ddd; /* خط فاصل بلون فاتح */
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+#total-calculation {
+    background-color: #ddd ;
+    padding: 10px;
+    font-size: 25px;
+    font-weight: bold;
+    color: #28a745;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+

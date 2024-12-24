@@ -1,18 +1,36 @@
 {% extends 'cost_calculator/base.html' %}
+{% load static %}
 {% block content %}
 <div class="container mt-5">
-    <h2>Your Projects</h2>
+    <h2 class="text-primary text-center mb-4">Your Projects</h2>
+    <!-- إضافة الحقل المخفي للـ CSRF -->
+    <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+    
     {% if projects %}
-        <ul>
-            {% for project in projects %}
-                <li>
-                    <a href="{% url 'cost_calculator:project_detail' project.id %}">{{ project.name }}</a> - 
-                    {{ project.total_cost }} USD
-                </li>
-            {% endfor %}
-        </ul>
+    <div class="list-group">
+        {% for project in projects %}
+            <div class="list-group-item mb-3 shadow-sm p-3 rounded" id="project-{{ project.id }}">
+                <h4 class="text-success">{{ project.title }}</h4>
+                <p><strong>Type:</strong> {{ project.get_type_display }}</p>
+                {% if project.area %}
+                    <p><strong>Area:</strong> {{ project.area }} m²</p>
+                {% endif %}
+                {% if project.part %}
+                    <p><strong>Part:</strong> {{ project.part }}</p>
+                {% endif %}
+                {% if project.quantity %}
+                    <p><strong>Quantity Or Area:</strong> {{ project.quantity }}</p>
+                {% endif %}
+                <p><strong>Created At:</strong> {{ project.created_at|date:"d M Y, H:i" }}</p>
+                <!-- زر الحذف -->
+                <button class="btn btn-danger btn-sm mt-2 delete-btn" data-id="{{ project.id }}">Delete</button>
+            </div>
+        {% endfor %}
+    </div>
+    
     {% else %}
-        <p>You have no projects yet.</p>
+        <p class="text-center text-muted">No projects found.</p>
     {% endif %}
 </div>
+<script src="{% static 'cost_calculator/js/all_projects.js' %}"></script>
 {% endblock %}

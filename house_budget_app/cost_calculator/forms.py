@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from .models import Project, HousePart
+
 
 class CustomUserCreationForm(UserCreationForm):
     email = forms.EmailField(required=True, widget=forms.EmailInput(attrs={'class': 'form-control'}))
@@ -16,7 +16,3 @@ class CustomUserCreationForm(UserCreationForm):
             'password2': forms.PasswordInput(attrs={'class': 'form-control'}),
         }
 
-class ProjectForm(forms.ModelForm):
-    class Meta:
-        model = Project
-        fields = ['name', 'project_type', 'area', 'partial_area', 'budget_category']

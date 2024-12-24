@@ -18,23 +18,3 @@ scrollToTopButton.onclick = function () {
     });
 };
 
-
-// register.js
-document.addEventListener("DOMContentLoaded", () => {
-    const form = document.getElementById("register-form");
-    const inputs = form.querySelectorAll("input");
-
-    inputs.forEach(input => {
-        input.addEventListener("blur", () => {
-            if (!input.value.trim()) {
-                input.classList.add("is-invalid");
-            } else {
-                input.classList.remove("is-invalid");
-            }
-        });
-
-        input.addEventListener("focus", () => {
-            input.classList.remove("is-invalid");
-        });
-    });
-});

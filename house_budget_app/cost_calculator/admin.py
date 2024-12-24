@@ -1,8 +1,8 @@
 from django.contrib import admin
-from .models import Project, HousePart, Work, Material, MaterialCategory
+from .models import Unit, Category, SubCategory, HousePart, Project
 
-admin.site.register(Project)
+admin.site.register(Unit)
+admin.site.register(Category)
+admin.site.register(SubCategory)
 admin.site.register(HousePart)
-admin.site.register(Work)
-admin.site.register(Material)
-admin.site.register(MaterialCategory)
+admin.site.register(Project)

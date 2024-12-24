@@ -1,0 +1,1241 @@
+[
+    {
+        "model": "cost_calculator.unit",
+        "pk": 1,
+        "fields": {
+            "name": "Square Meter",
+            "description": "Measurement unit for area"
+        }
+    },
+    {
+        "model": "cost_calculator.unit",
+        "pk": 2,
+        "fields": {
+            "name": "Cubic Meter",
+            "description": "Measurement unit for volume"
+        }
+    },
+    {
+        "model": "cost_calculator.unit",
+        "pk": 3,
+        "fields": {
+            "name": "Linear Meter",
+            "description": "Measurement unit for length"
+        }
+    },
+    {
+        "model": "cost_calculator.unit",
+        "pk": 4,
+        "fields": {
+            "name": "Count",
+            "description": "Measurement unit for countable items"
+        }
+    },
+    {
+        "model": "cost_calculator.category",
+        "pk": 1,
+        "fields": {
+            "name": "Foundations",
+            "description": "Foundations related parts of the house"
+        }
+    },
+    {
+        "model": "cost_calculator.subcategory",
+        "pk": 1,
+        "fields": {
+            "category": 1,
+            "name": "Excavation",
+            "description": "Excavation within Foundations"
+        }
+    },
+    {
+        "model": "cost_calculator.housepart",
+        "pk": 1,
+        "fields": {
+            "subcategory": 1,
+            "name": "Excavation",
+            "material_cost": 100,
+            "labor_cost": 50,
+            "unit": 1,
+            "description": "Excavation includes material and labor costs"
+        }
+    },
+    {
+        "model": "cost_calculator.subcategory",
+        "pk": 2,
+        "fields": {
+            "category": 1,
+            "name": "Reinforced Concrete",
+            "description": "Reinforced Concrete within Foundations"
+        }
+    },
+    {
+        "model": "cost_calculator.housepart",
+        "pk": 2,
+        "fields": {
+            "subcategory": 2,
+            "name": "Reinforced Concrete",
+            "material_cost": 100,
+            "labor_cost": 50,
+            "unit": 1,
+            "description": "Reinforced Concrete includes material and labor costs"
+        }
+    },
+    {
+        "model": "cost_calculator.subcategory",
+        "pk": 3,
+        "fields": {
+            "category": 1,
+            "name": "Concrete Belts",
+            "description": "Concrete Belts within Foundations"
+        }
+    },
+    {
+        "model": "cost_calculator.housepart",
+        "pk": 3,
+        "fields": {
+            "subcategory": 3,
+            "name": "Concrete Belts",
+            "material_cost": 100,
+            "labor_cost": 50,
+            "unit": 1,
+            "description": "Concrete Belts includes material and labor costs"
+        }
+    },
+    {
+        "model": "cost_calculator.subcategory",
+        "pk": 4,
+        "fields": {
+            "category": 1,
+            "name": "Waterproofing",
+            "description": "Waterproofing within Foundations"
+        }
+    },
+    {
+        "model": "cost_calculator.housepart",
+        "pk": 4,
+        "fields": {
+            "subcategory": 4,
+            "name": "Waterproofing",
+            "material_cost": 100,
+            "labor_cost": 50,
+            "unit": 1,
+            "description": "Waterproofing includes material and labor costs"
+        }
+    },
+    {
+        "model": "cost_calculator.subcategory",
+        "pk": 5,
+        "fields": {
+            "category": 1,
+            "name": "Backfilling",
+            "description": "Backfilling within Foundations"
+        }
+    },
+    {
+        "model": "cost_calculator.housepart",
+        "pk": 5,
+        "fields": {
+            "subcategory": 5,
+            "name": "Backfilling",
+            "material_cost": 100,
+            "labor_cost": 50,
+            "unit": 1,
+            "description": "Backfilling includes material and labor costs"
+        }
+    },
+    {
+        "model": "cost_calculator.category",
+        "pk": 2,
+        "fields": {
+            "name": "Structure",
+            "description": "Structure related parts of the house"
+        }
+    },
+    {
+        "model": "cost_calculator.subcategory",
+        "pk": 6,
+        "fields": {
+            "category": 2,
+            "name": "Floors",
+            "description": "Floors within Structure"
+        }
+    },
+    {
+        "model": "cost_calculator.housepart",
+        "pk": 6,
+        "fields": {
+            "subcategory": 6,
+            "name": "Floors",
+            "material_cost": 100,
+            "labor_cost": 50,
+            "unit": 1,
+            "description": "Floors includes material and labor costs"
+        }
+    },
+    {
+        "model": "cost_calculator.subcategory",
+        "pk": 7,
+        "fields": {
+            "category": 2,
+            "name": "Walls",
+            "description": "Walls within Structure"
+        }
+    },
+    {
+        "model": "cost_calculator.housepart",
+        "pk": 7,
+        "fields": {
+            "subcategory": 7,
+            "name": "Walls",
+            "material_cost": 100,
+            "labor_cost": 50,
+            "unit": 1,
+            "description": "Walls includes material and labor costs"
+        }
+    },
+    {
+        "model": "cost_calculator.subcategory",
+        "pk": 8,
+        "fields": {
+            "category": 2,
+            "name": "Columns",
+            "description": "Columns within Structure"
+        }
+    },
+    {
+        "model": "cost_calculator.housepart",
+        "pk": 8,
+        "fields": {
+            "subcategory": 8,
+            "name": "Columns",
+            "material_cost": 100,
+            "labor_cost": 50,
+            "unit": 1,
+            "description": "Columns includes material and labor costs"
+        }
+    },
+    {
+        "model": "cost_calculator.subcategory",
+        "pk": 9,
+        "fields": {
+            "category": 2,
+            "name": "Ceilings",
+            "description": "Ceilings within Structure"
+        }
+    },
+    {
+        "model": "cost_calculator.housepart",
+        "pk": 9,
+        "fields": {
+            "subcategory": 9,
+            "name": "Ceilings",
+            "material_cost": 100,
+            "labor_cost": 50,
+            "unit": 1,
+            "description": "Ceilings includes material and labor costs"
+        }
+    },
+    {
+        "model": "cost_calculator.category",
+        "pk": 3,
+        "fields": {
+            "name": "Roofing",
+            "description": "Roofing related parts of the house"
+        }
+    },
+    {
+        "model": "cost_calculator.subcategory",
+        "pk": 10,
+        "fields": {
+            "category": 3,
+            "name": "Roof Framework",
+            "description": "Roof Framework within Roofing"
+        }
+    },
+    {
+        "model": "cost_calculator.housepart",
+        "pk": 10,
+        "fields": {
+            "subcategory": 10,
+            "name": "Roof Framework",
+            "material_cost": 100,
+            "labor_cost": 50,
+            "unit": 1,
+            "description": "Roof Framework includes material and labor costs"
+        }
+    },
+    {
+        "model": "cost_calculator.subcategory",
+        "pk": 11,
+        "fields": {
+            "category": 3,
+            "name": "Insulation",
+            "description": "Insulation within Roofing"
+        }
+    },
+    {
+        "model": "cost_calculator.housepart",
+        "pk": 11,
+        "fields": {
+            "subcategory": 11,
+            "name": "Insulation",
+            "material_cost": 100,
+            "labor_cost": 50,
+            "unit": 1,
+            "description": "Insulation includes material and labor costs"
+        }
+    },
+    {
+        "model": "cost_calculator.subcategory",
+        "pk": 12,
+        "fields": {
+            "category": 3,
+            "name": "Roof Covering",
+            "description": "Roof Covering within Roofing"
+        }
+    },
+    {
+        "model": "cost_calculator.housepart",
+        "pk": 12,
+        "fields": {
+            "subcategory": 12,
+            "name": "Roof Covering",
+            "material_cost": 100,
+            "labor_cost": 50,
+            "unit": 1,
+            "description": "Roof Covering includes material and labor costs"
+        }
+    },
+    {
+        "model": "cost_calculator.category",
+        "pk": 4,
+        "fields": {
+            "name": "Interior Work",
+            "description": "Interior Work related parts of the house"
+        }
+    },
+    {
+        "model": "cost_calculator.subcategory",
+        "pk": 13,
+        "fields": {
+            "category": 4,
+            "name": "Flooring",
+            "description": "Flooring within Interior Work"
+        }
+    },
+    {
+        "model": "cost_calculator.housepart",
+        "pk": 13,
+        "fields": {
+            "subcategory": 13,
+            "name": "Flooring",
+            "material_cost": 100,
+            "labor_cost": 50,
+            "unit": 1,
+            "description": "Flooring includes material and labor costs"
+        }
+    },
+    {
+        "model": "cost_calculator.subcategory",
+        "pk": 14,
+        "fields": {
+            "category": 4,
+            "name": "Walls",
+            "description": "Walls within Interior Work"
+        }
+    },
+    {
+        "model": "cost_calculator.housepart",
+        "pk": 14,
+        "fields": {
+            "subcategory": 14,
+            "name": "Walls",
+            "material_cost": 100,
+            "labor_cost": 50,
+            "unit": 1,
+            "description": "Walls includes material and labor costs"
+        }
+    },
+    {
+        "model": "cost_calculator.subcategory",
+        "pk": 15,
+        "fields": {
+            "category": 4,
+            "name": "Ceilings",
+            "description": "Ceilings within Interior Work"
+        }
+    },
+    {
+        "model": "cost_calculator.housepart",
+        "pk": 15,
+        "fields": {
+            "subcategory": 15,
+            "name": "Ceilings",
+            "material_cost": 100,
+            "labor_cost": 50,
+            "unit": 1,
+            "description": "Ceilings includes material and labor costs"
+        }
+    },
+    {
+        "model": "cost_calculator.category",
+        "pk": 5,
+        "fields": {
+            "name": "Exterior Work",
+            "description": "Exterior Work related parts of the house"
+        }
+    },
+    {
+        "model": "cost_calculator.subcategory",
+        "pk": 16,
+        "fields": {
+            "category": 5,
+            "name": "Exterior Paint",
+            "description": "Exterior Paint within Exterior Work"
+        }
+    },
+    {
+        "model": "cost_calculator.housepart",
+        "pk": 16,
+        "fields": {
+            "subcategory": 16,
+            "name": "Exterior Paint",
+            "material_cost": 100,
+            "labor_cost": 50,
+            "unit": 1,
+            "description": "Exterior Paint includes material and labor costs"
+        }
+    },
+    {
+        "model": "cost_calculator.subcategory",
+        "pk": 17,
+        "fields": {
+            "category": 5,
+            "name": "Exterior Cladding",
+            "description": "Exterior Cladding within Exterior Work"
+        }
+    },
+    {
+        "model": "cost_calculator.housepart",
+        "pk": 17,
+        "fields": {
+            "subcategory": 17,
+            "name": "Exterior Cladding",
+            "material_cost": 100,
+            "labor_cost": 50,
+            "unit": 1,
+            "description": "Exterior Cladding includes material and labor costs"
+        }
+    },
+    {
+        "model": "cost_calculator.subcategory",
+        "pk": 18,
+        "fields": {
+            "category": 5,
+            "name": "Gutters",
+            "description": "Gutters within Exterior Work"
+        }
+    },
+    {
+        "model": "cost_calculator.housepart",
+        "pk": 18,
+        "fields": {
+            "subcategory": 18,
+            "name": "Gutters",
+            "material_cost": 100,
+            "labor_cost": 50,
+            "unit": 1,
+            "description": "Gutters includes material and labor costs"
+        }
+    },
+    {
+        "model": "cost_calculator.category",
+        "pk": 6,
+        "fields": {
+            "name": "Doors and Windows",
+            "description": "Doors and Windows related parts of the house"
+        }
+    },
+    {
+        "model": "cost_calculator.subcategory",
+        "pk": 19,
+        "fields": {
+            "category": 6,
+            "name": "Interior Doors",
+            "description": "Interior Doors within Doors and Windows"
+        }
+    },
+    {
+        "model": "cost_calculator.housepart",
+        "pk": 19,
+        "fields": {
+            "subcategory": 19,
+            "name": "Interior Doors",
+            "material_cost": 100,
+            "labor_cost": 50,
+            "unit": 1,
+            "description": "Interior Doors includes material and labor costs"
+        }
+    },
+    {
+        "model": "cost_calculator.subcategory",
+        "pk": 20,
+        "fields": {
+            "category": 6,
+            "name": "Exterior Doors",
+            "description": "Exterior Doors within Doors and Windows"
+        }
+    },
+    {
+        "model": "cost_calculator.housepart",
+        "pk": 20,
+        "fields": {
+            "subcategory": 20,
+            "name": "Exterior Doors",
+            "material_cost": 100,
+            "labor_cost": 50,
+            "unit": 1,
+            "description": "Exterior Doors includes material and labor costs"
+        }
+    },
+    {
+        "model": "cost_calculator.subcategory",
+        "pk": 21,
+        "fields": {
+            "category": 6,
+            "name": "Windows",
+            "description": "Windows within Doors and Windows"
+        }
+    },
+    {
+        "model": "cost_calculator.housepart",
+        "pk": 21,
+        "fields": {
+            "subcategory": 21,
+            "name": "Windows",
+            "material_cost": 100,
+            "labor_cost": 50,
+            "unit": 1,
+            "description": "Windows includes material and labor costs"
+        }
+    },
+    {
+        "model": "cost_calculator.subcategory",
+        "pk": 22,
+        "fields": {
+            "category": 6,
+            "name": "Frames",
+            "description": "Frames within Doors and Windows"
+        }
+    },
+    {
+        "model": "cost_calculator.housepart",
+        "pk": 22,
+        "fields": {
+            "subcategory": 22,
+            "name": "Frames",
+            "material_cost": 100,
+            "labor_cost": 50,
+            "unit": 1,
+            "description": "Frames includes material and labor costs"
+        }
+    },
+    {
+        "model": "cost_calculator.category",
+        "pk": 7,
+        "fields": {
+            "name": "Plumbing Systems",
+            "description": "Plumbing Systems related parts of the house"
+        }
+    },
+    {
+        "model": "cost_calculator.subcategory",
+        "pk": 23,
+        "fields": {
+            "category": 7,
+            "name": "Pipes",
+            "description": "Pipes within Plumbing Systems"
+        }
+    },
+    {
+        "model": "cost_calculator.housepart",
+        "pk": 23,
+        "fields": {
+            "subcategory": 23,
+            "name": "Pipes",
+            "material_cost": 100,
+            "labor_cost": 50,
+            "unit": 1,
+            "description": "Pipes includes material and labor costs"
+        }
+    },
+    {
+        "model": "cost_calculator.subcategory",
+        "pk": 24,
+        "fields": {
+            "category": 7,
+            "name": "Sewage",
+            "description": "Sewage within Plumbing Systems"
+        }
+    },
+    {
+        "model": "cost_calculator.housepart",
+        "pk": 24,
+        "fields": {
+            "subcategory": 24,
+            "name": "Sewage",
+            "material_cost": 100,
+            "labor_cost": 50,
+            "unit": 1,
+            "description": "Sewage includes material and labor costs"
+        }
+    },
+    {
+        "model": "cost_calculator.subcategory",
+        "pk": 25,
+        "fields": {
+            "category": 7,
+            "name": "Taps",
+            "description": "Taps within Plumbing Systems"
+        }
+    },
+    {
+        "model": "cost_calculator.housepart",
+        "pk": 25,
+        "fields": {
+            "subcategory": 25,
+            "name": "Taps",
+            "material_cost": 100,
+            "labor_cost": 50,
+            "unit": 1,
+            "description": "Taps includes material and labor costs"
+        }
+    },
+    {
+        "model": "cost_calculator.subcategory",
+        "pk": 26,
+        "fields": {
+            "category": 7,
+            "name": "Sinks and Toilets",
+            "description": "Sinks and Toilets within Plumbing Systems"
+        }
+    },
+    {
+        "model": "cost_calculator.housepart",
+        "pk": 26,
+        "fields": {
+            "subcategory": 26,
+            "name": "Sinks and Toilets",
+            "material_cost": 100,
+            "labor_cost": 50,
+            "unit": 1,
+            "description": "Sinks and Toilets includes material and labor costs"
+        }
+    },
+    {
+        "model": "cost_calculator.category",
+        "pk": 8,
+        "fields": {
+            "name": "Electrical Systems",
+            "description": "Electrical Systems related parts of the house"
+        }
+    },
+    {
+        "model": "cost_calculator.subcategory",
+        "pk": 27,
+        "fields": {
+            "category": 8,
+            "name": "Electrical Wiring",
+            "description": "Electrical Wiring within Electrical Systems"
+        }
+    },
+    {
+        "model": "cost_calculator.housepart",
+        "pk": 27,
+        "fields": {
+            "subcategory": 27,
+            "name": "Electrical Wiring",
+            "material_cost": 100,
+            "labor_cost": 50,
+            "unit": 1,
+            "description": "Electrical Wiring includes material and labor costs"
+        }
+    },
+    {
+        "model": "cost_calculator.subcategory",
+        "pk": 28,
+        "fields": {
+            "category": 8,
+            "name": "Lighting",
+            "description": "Lighting within Electrical Systems"
+        }
+    },
+    {
+        "model": "cost_calculator.housepart",
+        "pk": 28,
+        "fields": {
+            "subcategory": 28,
+            "name": "Lighting",
+            "material_cost": 100,
+            "labor_cost": 50,
+            "unit": 1,
+            "description": "Lighting includes material and labor costs"
+        }
+    },
+    {
+        "model": "cost_calculator.subcategory",
+        "pk": 29,
+        "fields": {
+            "category": 8,
+            "name": "Distribution Board",
+            "description": "Distribution Board within Electrical Systems"
+        }
+    },
+    {
+        "model": "cost_calculator.housepart",
+        "pk": 29,
+        "fields": {
+            "subcategory": 29,
+            "name": "Distribution Board",
+            "material_cost": 100,
+            "labor_cost": 50,
+            "unit": 1,
+            "description": "Distribution Board includes material and labor costs"
+        }
+    },
+    {
+        "model": "cost_calculator.category",
+        "pk": 9,
+        "fields": {
+            "name": "Heating and Cooling Systems",
+            "description": "Heating and Cooling Systems related parts of the house"
+        }
+    },
+    {
+        "model": "cost_calculator.subcategory",
+        "pk": 30,
+        "fields": {
+            "category": 9,
+            "name": "Air Conditioning",
+            "description": "Air Conditioning within Heating and Cooling Systems"
+        }
+    },
+    {
+        "model": "cost_calculator.housepart",
+        "pk": 30,
+        "fields": {
+            "subcategory": 30,
+            "name": "Air Conditioning",
+            "material_cost": 100,
+            "labor_cost": 50,
+            "unit": 1,
+            "description": "Air Conditioning includes material and labor costs"
+        }
+    },
+    {
+        "model": "cost_calculator.subcategory",
+        "pk": 31,
+        "fields": {
+            "category": 9,
+            "name": "Water Heaters",
+            "description": "Water Heaters within Heating and Cooling Systems"
+        }
+    },
+    {
+        "model": "cost_calculator.housepart",
+        "pk": 31,
+        "fields": {
+            "subcategory": 31,
+            "name": "Water Heaters",
+            "material_cost": 100,
+            "labor_cost": 50,
+            "unit": 1,
+            "description": "Water Heaters includes material and labor costs"
+        }
+    },
+    {
+        "model": "cost_calculator.subcategory",
+        "pk": 32,
+        "fields": {
+            "category": 9,
+            "name": "Ventilation",
+            "description": "Ventilation within Heating and Cooling Systems"
+        }
+    },
+    {
+        "model": "cost_calculator.housepart",
+        "pk": 32,
+        "fields": {
+            "subcategory": 32,
+            "name": "Ventilation",
+            "material_cost": 100,
+            "labor_cost": 50,
+            "unit": 1,
+            "description": "Ventilation includes material and labor costs"
+        }
+    },
+    {
+        "model": "cost_calculator.category",
+        "pk": 10,
+        "fields": {
+            "name": "Decor and Furnishings",
+            "description": "Decor and Furnishings related parts of the house"
+        }
+    },
+    {
+        "model": "cost_calculator.subcategory",
+        "pk": 33,
+        "fields": {
+            "category": 10,
+            "name": "Curtains",
+            "description": "Curtains within Decor and Furnishings"
+        }
+    },
+    {
+        "model": "cost_calculator.housepart",
+        "pk": 33,
+        "fields": {
+            "subcategory": 33,
+            "name": "Curtains",
+            "material_cost": 100,
+            "labor_cost": 50,
+            "unit": 1,
+            "description": "Curtains includes material and labor costs"
+        }
+    },
+    {
+        "model": "cost_calculator.subcategory",
+        "pk": 34,
+        "fields": {
+            "category": 10,
+            "name": "Fixed Furniture",
+            "description": "Fixed Furniture within Decor and Furnishings"
+        }
+    },
+    {
+        "model": "cost_calculator.housepart",
+        "pk": 34,
+        "fields": {
+            "subcategory": 34,
+            "name": "Fixed Furniture",
+            "material_cost": 100,
+            "labor_cost": 50,
+            "unit": 1,
+            "description": "Fixed Furniture includes material and labor costs"
+        }
+    },
+    {
+        "model": "cost_calculator.subcategory",
+        "pk": 35,
+        "fields": {
+            "category": 10,
+            "name": "Cabinets",
+            "description": "Cabinets within Decor and Furnishings"
+        }
+    },
+    {
+        "model": "cost_calculator.housepart",
+        "pk": 35,
+        "fields": {
+            "subcategory": 35,
+            "name": "Cabinets",
+            "material_cost": 100,
+            "labor_cost": 50,
+            "unit": 1,
+            "description": "Cabinets includes material and labor costs"
+        }
+    },
+    {
+        "model": "cost_calculator.category",
+        "pk": 11,
+        "fields": {
+            "name": "Gardens and Outdoor Spaces",
+            "description": "Gardens and Outdoor Spaces related parts of the house"
+        }
+    },
+    {
+        "model": "cost_calculator.subcategory",
+        "pk": 36,
+        "fields": {
+            "category": 11,
+            "name": "Lawns",
+            "description": "Lawns within Gardens and Outdoor Spaces"
+        }
+    },
+    {
+        "model": "cost_calculator.housepart",
+        "pk": 36,
+        "fields": {
+            "subcategory": 36,
+            "name": "Lawns",
+            "material_cost": 100,
+            "labor_cost": 50,
+            "unit": 1,
+            "description": "Lawns includes material and labor costs"
+        }
+    },
+    {
+        "model": "cost_calculator.subcategory",
+        "pk": 37,
+        "fields": {
+            "category": 11,
+            "name": "Pathways",
+            "description": "Pathways within Gardens and Outdoor Spaces"
+        }
+    },
+    {
+        "model": "cost_calculator.housepart",
+        "pk": 37,
+        "fields": {
+            "subcategory": 37,
+            "name": "Pathways",
+            "material_cost": 100,
+            "labor_cost": 50,
+            "unit": 1,
+            "description": "Pathways includes material and labor costs"
+        }
+    },
+    {
+        "model": "cost_calculator.subcategory",
+        "pk": 38,
+        "fields": {
+            "category": 11,
+            "name": "Fences",
+            "description": "Fences within Gardens and Outdoor Spaces"
+        }
+    },
+    {
+        "model": "cost_calculator.housepart",
+        "pk": 38,
+        "fields": {
+            "subcategory": 38,
+            "name": "Fences",
+            "material_cost": 100,
+            "labor_cost": 50,
+            "unit": 1,
+            "description": "Fences includes material and labor costs"
+        }
+    },
+    {
+        "model": "cost_calculator.category",
+        "pk": 12,
+        "fields": {
+            "name": "Safety and Security",
+            "description": "Safety and Security related parts of the house"
+        }
+    },
+    {
+        "model": "cost_calculator.subcategory",
+        "pk": 39,
+        "fields": {
+            "category": 12,
+            "name": "Alarm Systems",
+            "description": "Alarm Systems within Safety and Security"
+        }
+    },
+    {
+        "model": "cost_calculator.housepart",
+        "pk": 39,
+        "fields": {
+            "subcategory": 39,
+            "name": "Alarm Systems",
+            "material_cost": 100,
+            "labor_cost": 50,
+            "unit": 1,
+            "description": "Alarm Systems includes material and labor costs"
+        }
+    },
+    {
+        "model": "cost_calculator.subcategory",
+        "pk": 40,
+        "fields": {
+            "category": 12,
+            "name": "CCTV Cameras",
+            "description": "CCTV Cameras within Safety and Security"
+        }
+    },
+    {
+        "model": "cost_calculator.housepart",
+        "pk": 40,
+        "fields": {
+            "subcategory": 40,
+            "name": "CCTV Cameras",
+            "material_cost": 100,
+            "labor_cost": 50,
+            "unit": 1,
+            "description": "CCTV Cameras includes material and labor costs"
+        }
+    },
+    {
+        "model": "cost_calculator.category",
+        "pk": 13,
+        "fields": {
+            "name": "Rooms",
+            "description": "Rooms related parts of the house"
+        }
+    },
+    {
+        "model": "cost_calculator.subcategory",
+        "pk": 41,
+        "fields": {
+            "category": 13,
+            "name": "Bedroom",
+            "description": "Bedroom within Rooms"
+        }
+    },
+    {
+        "model": "cost_calculator.housepart",
+        "pk": 41,
+        "fields": {
+            "subcategory": 41,
+            "name": "Bedroom",
+            "material_cost": 100,
+            "labor_cost": 50,
+            "unit": 1,
+            "description": "Bedroom includes material and labor costs"
+        }
+    },
+    {
+        "model": "cost_calculator.subcategory",
+        "pk": 42,
+        "fields": {
+            "category": 13,
+            "name": "Living Room",
+            "description": "Living Room within Rooms"
+        }
+    },
+    {
+        "model": "cost_calculator.housepart",
+        "pk": 42,
+        "fields": {
+            "subcategory": 42,
+            "name": "Living Room",
+            "material_cost": 100,
+            "labor_cost": 50,
+            "unit": 1,
+            "description": "Living Room includes material and labor costs"
+        }
+    },
+    {
+        "model": "cost_calculator.subcategory",
+        "pk": 43,
+        "fields": {
+            "category": 13,
+            "name": "Children's Room",
+            "description": "Children's Room within Rooms"
+        }
+    },
+    {
+        "model": "cost_calculator.housepart",
+        "pk": 43,
+        "fields": {
+            "subcategory": 43,
+            "name": "Children's Room",
+            "material_cost": 100,
+            "labor_cost": 50,
+            "unit": 1,
+            "description": "Children's Room includes material and labor costs"
+        }
+    },
+    {
+        "model": "cost_calculator.subcategory",
+        "pk": 44,
+        "fields": {
+            "category": 13,
+            "name": "Office",
+            "description": "Office within Rooms"
+        }
+    },
+    {
+        "model": "cost_calculator.housepart",
+        "pk": 44,
+        "fields": {
+            "subcategory": 44,
+            "name": "Office",
+            "material_cost": 100,
+            "labor_cost": 50,
+            "unit": 1,
+            "description": "Office includes material and labor costs"
+        }
+    },
+    {
+        "model": "cost_calculator.category",
+        "pk": 14,
+        "fields": {
+            "name": "Bathrooms",
+            "description": "Bathrooms related parts of the house"
+        }
+    },
+    {
+        "model": "cost_calculator.subcategory",
+        "pk": 45,
+        "fields": {
+            "category": 14,
+            "name": "Main Bathroom",
+            "description": "Main Bathroom within Bathrooms"
+        }
+    },
+    {
+        "model": "cost_calculator.housepart",
+        "pk": 45,
+        "fields": {
+            "subcategory": 45,
+            "name": "Main Bathroom",
+            "material_cost": 100,
+            "labor_cost": 50,
+            "unit": 1,
+            "description": "Main Bathroom includes material and labor costs"
+        }
+    },
+    {
+        "model": "cost_calculator.subcategory",
+        "pk": 46,
+        "fields": {
+            "category": 14,
+            "name": "Guest Bathroom",
+            "description": "Guest Bathroom within Bathrooms"
+        }
+    },
+    {
+        "model": "cost_calculator.housepart",
+        "pk": 46,
+        "fields": {
+            "subcategory": 46,
+            "name": "Guest Bathroom",
+            "material_cost": 100,
+            "labor_cost": 50,
+            "unit": 1,
+            "description": "Guest Bathroom includes material and labor costs"
+        }
+    },
+    {
+        "model": "cost_calculator.category",
+        "pk": 15,
+        "fields": {
+            "name": "Living Area",
+            "description": "Living Area related parts of the house"
+        }
+    },
+    {
+        "model": "cost_calculator.category",
+        "pk": 16,
+        "fields": {
+            "name": "Kitchen",
+            "description": "Kitchen related parts of the house"
+        }
+    },
+    {
+        "model": "cost_calculator.subcategory",
+        "pk": 47,
+        "fields": {
+            "category": 16,
+            "name": "Kitchen Cabinets",
+            "description": "Kitchen Cabinets within Kitchen"
+        }
+    },
+    {
+        "model": "cost_calculator.housepart",
+        "pk": 47,
+        "fields": {
+            "subcategory": 47,
+            "name": "Kitchen Cabinets",
+            "material_cost": 100,
+            "labor_cost": 50,
+            "unit": 1,
+            "description": "Kitchen Cabinets includes material and labor costs"
+        }
+    },
+    {
+        "model": "cost_calculator.subcategory",
+        "pk": 48,
+        "fields": {
+            "category": 16,
+            "name": "Countertops",
+            "description": "Countertops within Kitchen"
+        }
+    },
+    {
+        "model": "cost_calculator.housepart",
+        "pk": 48,
+        "fields": {
+            "subcategory": 48,
+            "name": "Countertops",
+            "material_cost": 100,
+            "labor_cost": 50,
+            "unit": 1,
+            "description": "Countertops includes material and labor costs"
+        }
+    },
+    {
+        "model": "cost_calculator.subcategory",
+        "pk": 49,
+        "fields": {
+            "category": 16,
+            "name": "Appliances",
+            "description": "Appliances within Kitchen"
+        }
+    },
+    {
+        "model": "cost_calculator.housepart",
+        "pk": 49,
+        "fields": {
+            "subcategory": 49,
+            "name": "Appliances",
+            "material_cost": 100,
+            "labor_cost": 50,
+            "unit": 1,
+            "description": "Appliances includes material and labor costs"
+        }
+    },
+    {
+        "model": "cost_calculator.category",
+        "pk": 17,
+        "fields": {
+            "name": "Garage",
+            "description": "Garage related parts of the house"
+        }
+    },
+    {
+        "model": "cost_calculator.subcategory",
+        "pk": 50,
+        "fields": {
+            "category": 17,
+            "name": "Car Garage",
+            "description": "Car Garage within Garage"
+        }
+    },
+    {
+        "model": "cost_calculator.housepart",
+        "pk": 50,
+        "fields": {
+            "subcategory": 50,
+            "name": "Car Garage",
+            "material_cost": 100,
+            "labor_cost": 50,
+            "unit": 1,
+            "description": "Car Garage includes material and labor costs"
+        }
+    },
+    {
+        "model": "cost_calculator.subcategory",
+        "pk": 51,
+        "fields": {
+            "category": 17,
+            "name": "Storage Room",
+            "description": "Storage Room within Garage"
+        }
+    },
+    {
+        "model": "cost_calculator.housepart",
+        "pk": 51,
+        "fields": {
+            "subcategory": 51,
+            "name": "Storage Room",
+            "material_cost": 100,
+            "labor_cost": 50,
+            "unit": 1,
+            "description": "Storage Room includes material and labor costs"
+        }
+    }
+]

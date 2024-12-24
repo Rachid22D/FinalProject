@@ -1,27 +1,29 @@
 {% extends 'cost_calculator/base.html' %}
-
+{% load static %}
 {% block content %}
-<div class="container mt-5 d-flex justify-content-center">
-    <div class="card p-4 shadow-sm" style="max-width: 400px; width: 100%;">
+<!-- CSS -->
+<link rel="stylesheet" href="{% static 'cost_calculator/css/login.css' %}">
+<div class="login-container container mt-5 d-flex justify-content-center">
+    <div class="login-card card p-4 shadow-sm" style="max-width: 400px; width: 100%;">
         <h2 class="text-center mb-4">Login</h2>
         <form method="post">
             {% csrf_token %}
             <div class="mb-3">
                 <!-- Username input field -->
                 <label for="username" class="form-label">Username</label>
-                <input type="text" name="username" id="username" class="form-control" required>
+                <input type="text" name="username" id="username" class=" login-form form-control" required>
             </div>
-            <div class="mb-3">
+            <div class="login-mb-3 mb-3">
                 <!-- Password input field -->
-                <label for="password" class="form-label">Password</label>
+                <label for="password" class="login-form-label form-label">Password</label>
                 <input type="password" name="password" id="password" class="form-control" required>
             </div>
             <div class="text-center">
                 <!-- Submit button -->
-                <button type="submit" class="btn btn-primary w-100">Login</button>
+                <button type="submit" class="login-btn btn-primary w-100">Login</button>
             </div>
         </form>
-        <div class="mt-3 text-center">
+        <div class="login-mb-3 mt-3 text-center">
             <!-- Link to registration page -->
             <p>Don't have an account? <a href="{% url 'cost_calculator:register' %}">Register here</a></p>
         </div>
